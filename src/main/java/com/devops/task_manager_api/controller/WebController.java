@@ -1,10 +1,10 @@
-package com.devops.task_manager_api.controller;
+package com.example.chaikafe;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class WebController {
+public class PageController {
 
     @GetMapping("/")
     public String home() {
