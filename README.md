@@ -12,7 +12,7 @@ IAM Role (Secure AWS Access)
 
                           Developer → GitHub → Jenkins → Docker → AWS ECR
 
-**🛠️ Step 1: Application Development**
+#**🛠️ Step 1: Application Development**
 
 Created Spring Boot application
 Added Web + Actuator dependencies
@@ -24,7 +24,7 @@ Created simple café portal endpoints:
 
 Verified Using: http://localhost:8080(locally)
 
-**🐳 Step 2: Dockerization**
+#**🐳 Step 2: Dockerization**
 **Dockerfile**
 FROM eclipse-temurin:17-jre
 WORKDIR /app
@@ -33,19 +33,19 @@ EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]
 
 **Multi stage :**
-# Stage 1 - Build
+Stage 1 - Build
 FROM maven:3.9.6-eclipse-temurin-17 AS builder
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
-# Stage 2 - Runtime
+Stage 2 - Runtime
 FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 COPY --from=builder /app/target/task-manager-api-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]
 
-**☁️ Step 3: AWS Setup**
+#**☁️ Step 3: AWS Setup**
 EC2 Configuration
 Amazon Linux
 Docker installed
@@ -54,13 +54,13 @@ IAM Role attached
 IAM Role Permissions:AmazonEC2ContainerRegistryFullAccess
 Verified IAM:aws sts get-caller-identity
 
-**📦 Step 4: AWS ECR**
+#**📦 Step 4: AWS ECR**
 aws ecr create-repository --repository-name chai-kafe-app
 **Logged in:**
 aws ecr get-login-password --region us-east-1 \
 | docker login --username AWS --password-stdin <ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com
 
-**🔄 Step 5: Jenkins CI/CD Pipeline**
+#**🔄 Step 5: Jenkins CI/CD Pipeline**
 Created Jenkinsfile:
 Clone repository
 Build using Maven
