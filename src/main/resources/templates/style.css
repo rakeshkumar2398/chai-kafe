@@ -1,0 +1,152 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f8f1e4;
+    color:#3e2c23;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:#6f4e37;
+}
+
+nav h2{
+    color:white;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#f4c430;
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+}
+
+/* SECTION */
+section{
+    padding:80px 60px;
+    text-align:center;
+}
+
+section h2{
+    font-size:40px;
+    margin-bottom:40px;
+    color:#6f4e37;
+}
+
+/* MENU CARDS */
+.menu-items{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.card{
+    background:white;
+    width:250px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.price{
+    color:#f4c430;
+    font-weight:700;
+}
+
+/* ABOUT */
+.about{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* CONTACT */
+.contact form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+.contact input,
+.contact textarea{
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.contact button{
+    padding:12px;
+    border:none;
+    background:#6f4e37;
+    color:white;
+    border-radius:25px;
+    cursor:pointer;
+}
+
+.contact button:hover{
+    background:#3e2c23;
+}
+
+/* FOOTER */
+footer{
+    background:#6f4e37;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
