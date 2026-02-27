@@ -1,18 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Chai-Kafe ☕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            background: 
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        nav h2 {
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f4c430;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 30px;
+            margin: 10px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #f4c430;
+            color: black;
+        }
+
+        .btn-primary:hover {
+            background-color: #d4a017;
+        }
+
+        .btn-secondary {
+            border: 2px solid #f4c430;
+            color: #f4c430;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f4c430;
+            color: black;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.6);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px){
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 10px;
+            }
+        }
+    </style>
 </head>
-<body style="text-align:center; font-family:Arial; background-color:#f8f1e4; padding-top:80px;">
 
-<h1>Welcome to Chai-Kafe ☕</h1>
-<p>Fresh Chai • Fresh Vibes • Fresh Food</p>
+<body>
 
-<hr>
+    <!-- Navbar -->
+    <nav>
+        <h2>Chai-Kafe ☕</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<a href="/menu">Menu</a> |
-<a href="/about">About Us</a> |
-<a href="/contact">Contact</a>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to Chai-Kafe ☕</h1>
+        <p>Fresh Chai • Fresh Vibes • Fresh Food</p>
+
+        <div>
+            <a href="/menu" class="btn btn-primary">Explore Menu</a>
+            <a href="/contact" class="btn btn-secondary">Order Now</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Chai-Kafe | Brewed with Passion ☕
+    </footer>
 
 </body>
 </html>
