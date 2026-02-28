@@ -9,10 +9,11 @@ pipeline {
     }
 
     stages {
-
-        stage('Code Cloning') {
+        
+        stage('Git Checkout') {
             steps {
-                checkout scm
+                git branch: 'main',
+                    url: 'https://github.com/rakeshkumar2398/netflix-e2e.git'
             }
         }
 
@@ -22,7 +23,7 @@ pipeline {
             }
         }
 
-        stage('Docker Build Image) {
+        stage('Docker Build Image') {
             steps {
                 sh 'docker build -t chai-kafe-app:${IMAGE_TAG} .'
             }
