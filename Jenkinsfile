@@ -13,7 +13,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/rakeshkumar2398/chai-kafe.git'
+                    url: 'https://github.com/rakeshkumar2398/netflix-e2e.git'
             }
         }
 
@@ -23,9 +23,9 @@ pipeline {
             }
         }
 
-        stage('Docker Build Image') {
+        stage('Docker Build & Tag') {
             steps {
-                sh 'docker build -t chai-kafe-app:${IMAGE_TAG} .'
+                sh 'docker build -t $ECR_REPO:${IMAGE_TAG} .'
             }
         }
 
@@ -38,16 +38,19 @@ pipeline {
             }
         }
 
-        stage('Docker Tag') {
-            steps {
-                sh 'docker tag chai-kafe-app:${IMAGE_TAG} $ECR_REPO:${IMAGE_TAG}'
-            }
-        }
-
         stage('Docker Push') {
             steps {
                 sh 'docker push $ECR_REPO:${IMAGE_TAG}'
             }
+        }
+    }
+
+    post {
+        success {
+            echo "Image pushed successfully: ${IMAGE_TAG}"
+        }
+        failure {
+            echo "Pipeline failed!"
         }
     }
 }
