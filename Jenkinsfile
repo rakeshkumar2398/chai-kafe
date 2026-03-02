@@ -13,7 +13,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/rakeshkumar2398/netflix-e2e.git'
+                    url: 'https://github.com/rakeshkumar2398/chai-kafe.git'
             }
         }
 
